@@ -1,0 +1,28 @@
+{
+  "name": "nut-generator-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "sh build/release.sh"
+  },
+  "bin": {
+    "nut": "./bin/nut.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.10.0",
+    "fs-extra": "^11.3.4",
+    "inquirer": "^13.3.0",
+    "log-symbols": "^7.0.1",
+    "ora": "^9.3.0",
+    "shelljs": "^0.10.0"
+  }
+}
