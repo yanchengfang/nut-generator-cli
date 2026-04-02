@@ -1,0 +1,54 @@
+# <%= projectName %> 
+
+基于 **<%= techStack.framework.toUpperCase() %>** 和 **<%= techStack.buildTool.toUpperCase() %>** 搭建的的前端项目模板
+
+## 技术栈
+- 编程语言: TypeScript
+- 框架: <%= techStack.framework === 'vue' ? 'Vue3 Pinia Vue-router' : 'React19 Redux React-router' %>
+- UI 库: <%= techStack.framework === 'vue' ? 'Element Plus' : 'Ant Design' %>
+- 工具库: Axios ECharts Mockjs
+- 工具链: ESLint Prettier Husky Lint-staged Commitlint Commitizen(cz-git)
+- 构建工具: <%= techStack.buildTool === 'webpack' ? 'Webpack5' : 'Vite8 Rollup' %>
+
+## 环境要求
+
+- Node 版本 >= <%= nodeVersion %>
+- 包管理器：<%= packageManager %>
+
+## 快速开始
+
+```bash
+<%= packageManager %> install
+<%= packageManager %> run dev
+```
+
+## 常用命令
+
+- 启动开发：`<%= packageManager %> run dev`
+- 生产构建：`<%= packageManager %> run build`
+- 代码检查：`<%= packageManager %> run lint`
+- 提交代码：`<%= packageManager %> run commit`
+- 代码格式化：`<%= packageManager %> run format`
+
+## 目录结构
+
+```txt
+.
+├─ public
+├─ src
+├─ .env.example
+└─ package.json
+```
+
+## 环境变量
+
+请先复制环境变量示例文件并按需修改：
+
+```bash
+cp .env.example .env
+```
+
+## 部署说明
+
+- 构建产物目录：`<%= outputDir %>`
+- 可选 Nginx 配置：`./nginx/default.conf`

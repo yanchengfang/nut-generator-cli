@@ -16,6 +16,7 @@ const initAction = async (name, option) => {
   }
 
   let repository = '';
+  let selectedTemplateName = "";
   if (option.template) {
     const template = templates.find(item => item.name === option.template);
     if (!template) {
@@ -24,10 +25,13 @@ const initAction = async (name, option) => {
       return;
     }
     repository = template.value;
+    selectedTemplateName = template.name;
   } else {
     // 选择模板
     const answer = await inquirerChoose("请选择一个项目模板", templates);
     repository = answer.choose;
+    const selectedTemplate = templates.find(item => item.value === repository);
+    selectedTemplateName = selectedTemplate ? selectedTemplate.name : "";
   }
 
   // 验证项目名称是否符合规范
@@ -64,7 +68,7 @@ const initAction = async (name, option) => {
   if (!option.ignore) {
     resMes = await inquirerInputs(message);
   }
-  await changePackageJson(name, resMes, !option.ignore);
+  await changePackageJson(name, resMes, !option.ignore, selectedTemplateName);
 
   // 是否自动安装依赖
   const answer = await inquirerConfirm("是否自动安装依赖?");
